@@ -4,6 +4,10 @@ API RESTful para possibilitar a leitura da lista de indicados e vencedores da ca
 - Spring Framework
 - H2 SGBD
 
+# Pré-requisitos
+- Maven baixado e instalado - https://maven.apache.org/download.cgi.
+- Maven configurado no path.
+
 
 # construindo o projeto
 mvn package
@@ -12,4 +16,4 @@ mvn package
 mvn test
 
 # executando aplicação
-java -cp target/my-app-1.0-SNAPSHOT.jar texoit.GoldenRaspberryAwardsApplication
+.\mvnw spring-boot:run
