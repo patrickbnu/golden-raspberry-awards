@@ -25,7 +25,7 @@ public class GoldenRaspberryAwardsIntegrationTest {
 	private static final Integer EXPECTED_MIN_INTERVAL = 1;
 	
 	private static final Integer SOME_AWARD_ID = 1;
-	private static final Integer INEXISTENT_AWARD_ID = 0;
+	private static final Integer NONEXISTENT_AWARD_ID = 0;
 
 	@Autowired
     private TestRestTemplate restTemplate;
@@ -48,7 +48,7 @@ public class GoldenRaspberryAwardsIntegrationTest {
     }
     @Test
     public void retriveAwardsByIdNotFound() {
-    	ResponseEntity<AwardDTO> response = restTemplate.getForEntity(getPath("/v1/awards/{id}"), AwardDTO.class, INEXISTENT_AWARD_ID);
+    	ResponseEntity<AwardDTO> response = restTemplate.getForEntity(getPath("/v1/awards/{id}"), AwardDTO.class, NONEXISTENT_AWARD_ID);
     	assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
     
